@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: viralcut-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_CHAT_MODEL
+        value: gpt-4.1-mini
+      - key: MAX_UPLOAD_MB
+        value: "500"
